@@ -76,7 +76,7 @@ var latitude = position.coords.latitude;
 var longitude = position.coords.longitude;
 $('#message').text("There you are at " + latitude + " " + longitude);
 $('#message').append(' <a id="watch" href="http://maps.google.com/maps?ix=acb&q=' + latitude + '+' + longitude + '&um=1&ie=UTF-8&hl=en&sa=N&tab=wl">Show on Google Maps</a>');
-$('#message').append(' <div id="map_canvas"> ');
+$('#main').append(' <div id="map_canvas"> ');
 (showMap(latitude, longitude));
 }
 
