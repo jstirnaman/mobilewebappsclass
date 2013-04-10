@@ -81,11 +81,9 @@ $('#main').append(' <div id="map_canvas"> ');
 }
 
 function showMap(myLat, myLong){
-    $('#map_canvas').gmap().bind('init', function(ev, map) {
-        $('#map_canvas').gmap('addMarker', { 'position': myLat + ',' + myLong, 'bounds': true }).click(function() {
-            $('#map_canvas').gmap('openInfoWindow', { 'content': 'Hello World!' }, this);
-        });
-    });
+	$('#map_canvas').gmap({ 'center': new google.maps.LatLng(myLat,myLong), 'callback': function() {
+			alert('Google map loaded!');
+	}});
 }
 function errorCallback(error) {
 switch (error.code) {
