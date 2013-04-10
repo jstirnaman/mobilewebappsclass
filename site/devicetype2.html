@@ -3,7 +3,7 @@
 <!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <title>Mobile Web Apps Class Exercise: DeviceType1</title>
+        <title>Mobile Web Apps Class Exercise: DeviceType2</title>
         <meta name="description" content="Centriq Mobile Web Apps Development class exercise file.">
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
@@ -40,40 +40,39 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     </head>
     <body>
-
-        <h1>Mobile Web Apps class exercise: Device Type 1</h1>
-        <!-- Add your site or application content here -->
-        <h2>Device detected: <span id="device"></span></h2>
-
-        <script src="js/vendor/zepto.min.js"></script>
-        <script src="js/helper.js"></script>
         <script>
          $(function () {
            console.log('jQuery is active');
           }); // end jQuery ready function
         </script>
+        <h1>Mobile Web Apps class exercise: Device Type 2</h1>
+        <h2>Device detected: <span id="device"></span></h2>
+        <!-- Add your site or application content here -->
+
+        <script src="js/vendor/zepto.min.js"></script>
+        <script src="js/helper.js"></script>
         <script>
-         function hasTouch() {
-					return Modernizr.touch;
+        // Map of {regexp: deviceType} that should be applied against the UA.
+					// Most specific rules first.
+					var UA_RULES = [
+					['iPhone;', 'phone'],
+					['iPad;', 'tablet'],
+					['Android.*Mobile Safari', 'phone'], // Chrome/Browser on Android phone
+					['Android.*Safari', 'tablet'], // Chrome/Browser on Android tablet
+					['.*', 'desktop'], // Fallback to desktop.
+					]
+					function detectDevice() {
+					var ua = navigator.userAgent;
+					for (var i = 0; i < UA_RULES.length; i++) {
+					var device = UA_RULES[i][1];
+					var re = new RegExp(UA_RULES[i][0]);
+					if (ua.match(re)) {
+					return device;
 					}
-					console.log(hasTouch());
-					function isSmall() {
-						return window.matchMedia("(max-width: 640px)").matches;
-						}
-						function detectDevice() {
-						if (hasTouch()) {
-						if (isSmall()) {
-						device = 'phone';
-						} else {
-						device = 'tablet';
-						}
-						} else {
-						device = 'desktop';
-						}
-						return device;
-						}
-						$('#device').text(detectDevice());
-        </script>
+					}
+					}
+					$('#device').text(detectDevice());
+				</script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             /* var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
