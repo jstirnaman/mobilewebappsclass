@@ -76,12 +76,13 @@ var latitude = position.coords.latitude;
 var longitude = position.coords.longitude;
 $('#message').text("There you are at " + latitude + " " + longitude);
 $('#message').append(' <a id="watch" href="http://maps.google.com/maps?ix=acb&q=' + latitude + '+' + longitude + '&um=1&ie=UTF-8&hl=en&sa=N&tab=wl">Show on Google Maps</a>');
-$('#message').append(showMap(latitude, longitude));
+$('#message').append(' <div id="map_canvas"> ');
+(showMap(latitude, longitude));
 }
 
 function showMap(myLat, myLong){
     $('#map_canvas').gmap().bind('init', function(ev, map) {
-        $('#map_canvas').gmap('addMarker', { 'position': "'" + myLat + "," + myLong + "'", 'bounds': true }).click(function() {
+        $('#map_canvas').gmap('addMarker', { 'position': '"' + myLat + ',' + myLong + '"', 'bounds': true }).click(function() {
             $('#map_canvas').gmap('openInfoWindow', { 'content': 'Hello World!' }, this);
         });
     });
