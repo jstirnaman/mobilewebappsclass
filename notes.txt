@@ -1,0 +1,9 @@
+Google Web Fonts to style text and replace graphic text in your pages.
+PhoneGap is still best mobile web app wrapper.
+Zepto is better than jquery if you want touch in a single framework and can ignore older browsers.
+
+Tools list:
+PhoneGap
+Zepto
+Kendo
+jQuery
