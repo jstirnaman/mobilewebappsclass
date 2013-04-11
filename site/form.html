@@ -65,13 +65,15 @@
 <form action="form.php" method="post">
   <label for="basic">Text Input:</label>
 <input type="text" name="name" id="basic" data-mini="true" />
-<h2>Shows label</h2>
+<h2>Hides input label</h2>
 <label for="username" class="ui-hidden-accessible">Username:</label>
 <input type="text" name="username" id="username" value="" placeholder="Username"/>
-<h2>Hides label</h2>
+<h2>Hides labels for all controls in container</h2>
 <div data-role="fieldcontain" class="ui-hide-label">
 	<label for="username">Username:</label>
 	<input type="text" name="username" id="username" value="" placeholder="Username"/>
+        <label for="date">Datetime:</label>
+        <input type="datetime" name="date" id="date"  />
 </div>
 <label for="slider-1">Input slider:</label>
 <input type="range" name="slider-1" id="slider-1" value="60" min="0" max="100" />
