@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]>    <html class="no-js iem7"> <![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <title>Mobile Web Apps Class Exercise: Touch</title>
+        <meta name="description" content="Centriq Mobile Web Apps Development class exercise file.">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="cleartype" content="on">
+        <meta name="author" content="Jason Stirnaman">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" href="img/touch/apple-touch-icon.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="img/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+        <!--
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        -->
+
+        <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+        <!--
+        <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+        -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/h5bp.css">
+        <link rel="stylesheet" href="css/mobilewebapps.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+				<script>
+				var minimumWidth = 480; // change to suit your needs
+				if (window.innerWidth <= minimumWidth) {
+				var script=document.createElement('script');
+				script.src = "http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css";
+				document.getElementsByTagName("head")[0].appendChild(script);
+				$('head').append('<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css">');
+				console.log("jQuery Mobile loaded");
+				}
+				</script>
+    </head>
+    <body>
+        <script>
+         $(function () {
+           console.log('jQuery is active');
+          }); // end jQuery ready function
+        </script>
+				<div id="container" data-role="page">
+				<header data-role="header">
+				<h1>Mobile Web Apps class exercise<span id="jqm"></span></h1>
+				</header>
+				<div id="main" data-role="content">
+<section id="events-p1" data-role="page" data-fullscreen="true">
+<header data-role="header"><h1>Page events 1</h1></header>
+<div data-role="content" class="content">
+<p>This page is the first page.</p>
+<p><strong>Click/tap and hold</strong> to clear events.</p>
+<p><strong>Rotate</strong> me.</p>
+<p><strong>Swipe</strong> me left and I'll go forward to page 2.</p>
+<p><output id="event1"></output></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>More space below page 1.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Still more space below page 1.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+<footer data-role="footer" data-position="fixed">
+<a id="btn_scrolldown" data-role="button" data-inline="true" data-icon="arrow-d">Scroll down</a>
+<a id="btn_scrollup" data-role="button" data-inline="true" data-icon="arrow-u">Scroll up</a>
+</footer>
+</section>
+<section id="events-p2" data-role="page">
+<header data-role="header"><h1>Page events 2</h1></header>
+<div data-role="content" class="content">
+<p>This page is the second page.</p>
+<p><strong>Click/tap</strong> to clear events.</p>
+<p><strong>Swipe</strong> me <strong>left</strong> and I'll go forward to page 3.</p>
+<p><strong>Swipe</strong> me <strong>right</strong> and I'll go back to page 1.</p>
+<p><output id="event2"></output></p>
+</div>
+</section>
+<section id="events-p3" data-role="page">
+<header data-role="header">
+<a href="#events-p1" data-icon="arrow-l" data-transition="fade" >p1</a>
+<h1>Page events 3</h1>
+</header>
+<div data-role="content" class="content">
+<p>This page is the third page.</p>
+<p><strong>Click/tap</strong> to clear events.</p>
+<p><strong>Swipe</strong> me <strong>right</strong> and I'll go back to page 2.</p>
+<p><output id="event3"></output></p>
+</div>
+</section>
+<section id="events-d1" data-role="dialog" >
+<header data-role="header"><h1>Test dialog</h1></header>
+<div data-role="content" class="content">
+<p>This page is a dialog.</p>
+<p><output id="event4"></output></p>
+<p><a href="#" data-rel="back" data-role="button" data-inline="true" data-icon="check">I liked it.</a></p>
+</div>
+</section>
+				</div>
+				<footer data-role="footer">
+				</footer>
+				</div>
+        <!-- Add your site or application content here -->
+
+        <script src="js/vendor/zepto.min.js"></script>
+        <script src="js/helper.js"></script>
+				<script>
+var clearp1 = 0; var clearp2 = 0; var clearp3 = 0;
+var $ui;
+$(function () {
+$('body').bind("orientationchange", function (event) {
+$("#event1").append(event.type + " changed me to " + event.orientation + ".<br/>");
+if (event.orientation == "landscape") { };
+});
+//-------------------------------------------------------page 1 events
+$('#events-p1').bind("taphold", function (event) {
+$("#event1").html("#" + ++clearp1 + ": I heard a " + event.type + ".<br/>");
+return false;
+});
+$('#events-p1').bind("swipeleft", function (event) {
+$.mobile.changePage("#events-p2");
+$("#event2").append("I heard a " + event.type + ".<br/>");
+});
+$('#btn_scrolldown').bind('click', function (event) {
+$.mobile.silentScroll($(window).scrollTop() + 200);
+});
+$('#btn_scrollup').bind('click', function (event) {
+$.mobile.silentScroll($(window).scrollTop() - 200);
+});
+//-------------------------------------------------------page 2 events
+$('#events-p2').bind("taphold", function (event) {
+$("#event2").html("#" + ++clearp2 + ": I heard a " + event.type + ".<br/>");
+return false;
+});
+$('#events-p2').bind("swipeleft", function (event) {
+$.mobile.changePage("#events-p3", {});
+$("#event3").append("I heard a " + event.type + ".<br/>");
+});
+$('#events-p2').bind("swiperight", function (event) {
+$.mobile.changePage("#", { reverse: true });
+$("#event1").append("I heard a " + event.type + ".<br/>");
+});
+$('#events-p2').on('pagehide', function (event, ui) {
+alert('This internal page will be shown: ' + ui.nextPage[0].id);
+});
+$('#events-p2').on('pageshow', function (event, ui) {
+alert('This internal page was just hidden: ' + ui.prevPage[0].id);
+});
+//-------------------------------------------------------page 3 events
+$('#events-p3').bind("taphold", function (event) {
+$("#event3").html("#" + ++clearp3 + ": I heard a " + event.type + ".<br/>");
+return false;
+});
+$('#events-p3').bind("swiperight", function (event) {
+$.mobile.changePage("#events-p2", { reverse: true });
+$("#event2").append("I heard a " + event.type + ".<br/>");
+});
+});					
+
+</script>
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            /* var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+            g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
+            s.parentNode.insertBefore(g,s)}(document,"script"));
+           */
+        </script>
+    </body>
+</html>
